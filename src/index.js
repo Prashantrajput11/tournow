@@ -1,17 +1,51 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React, { useState } from "react";
+import ReactDOM from "react-dom";
+import tourDB from "./tours.js";
+import "./style.css";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const App = function () {
+  var countries = Object.keys(tourDB);
+  const [selectedCountry, setSelectedCountry] = useState("India");
+  function tourClickHandler(country) {
+    setSelectedCountry(country);
+  }
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+  return (
+    <div className="main">
+      <div className="top-header">
+        <h1>
+        ✈️Tour<span className="primary-text">Now</span>
+        </h1>
+        <h2>
+          {" "}
+          Checkout My Favourite Tours. Select One To Begin Your World Journey
+        </h2>
+      </div>
+      <div className="showCountries">
+        {countries.map(function (country) {
+          return (
+            <button className="btns" onClick={() => tourClickHandler(country)}>
+              {country}
+            </button>
+          );
+        })}
+      </div>
+      <hr />
+      <div className="showCity">
+        <ul className="navitem">
+          {tourDB[selectedCountry].map(function (city) {
+            return (
+              <li className="item" key={city.name}>
+                <div>City : {city.name}</div>
+                <div>Price : {city.price}</div>
+                <div>Rating : {city.rating}</div>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </div>
+  );
+};
+
+ReactDOM.render(<App />, document.getElementById("root"));
