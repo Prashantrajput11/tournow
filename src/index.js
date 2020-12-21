@@ -14,7 +14,7 @@ const App = function () {
     <div className="main">
       <div className="top-header">
         <h1>
-        ✈️Tour<span className="primary-text">Now</span>
+          ✈️Tour<span className="primary-text">Now</span>
         </h1>
         <h2>
           {" "}
@@ -39,6 +39,10 @@ const App = function () {
                 <div>City : {city.name}</div>
                 <div>Price : {city.price}</div>
                 <div>Rating : {city.rating}</div>
+                <div className="image-data">
+                  <img src={city.image}></img>
+
+                  </div>
               </li>
             );
           })}
