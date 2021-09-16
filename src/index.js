@@ -62,7 +62,7 @@ const App = function () {
           ></a>
         </li>
         <li>
-          <a href="https://github.com/Prashantrajput11/stocks-app"
+          <a href="https://github.com/Prashantrajput11/tournow"
             >Github<i class="icons fab fa-github"></i
           ></a>
         </li>
