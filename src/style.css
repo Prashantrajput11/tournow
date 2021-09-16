@@ -58,6 +58,18 @@
   object-fit: cover;
 }
 
+#footer {
+  background-color: brown;
+  width: 100%;
+
+  max-width: 400px;
+  margin: 5px auto;
+  border-radius: 4px;
+}
+#footer {
+  height: 10vh;
+}
+
 .social {
   display: flex;
   justify-content: space-around;
