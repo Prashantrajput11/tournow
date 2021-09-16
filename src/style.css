@@ -57,3 +57,22 @@
   border-radius: 0.6rem;
   object-fit: cover;
 }
+
+.social {
+  display: flex;
+  justify-content: space-around;
+  padding: 18px;
+}
+.social li {
+  list-style: none;
+  font-size: 12px;
+}
+.social li a {
+  text-decoration: none;
+  color: white;
+  font-size: 12px;
+}
+.icons {
+  color: white;
+  font-size: 12px;
+}
