@@ -48,6 +48,27 @@ const App = function () {
           })}
         </ul>
       </div>
+      <div>
+      <footer id="footer">
+      <ul class="social">
+        <li>
+          <a href="https://twitter.com/code_prash"
+            >Twitter <i class="icons fab fa-twitter-square"></i
+          ></a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/prashant-tanwar-302571179/"
+            >Linkedin <i class="fab fa-linkedin-in"></i
+          ></a>
+        </li>
+        <li>
+          <a href="https://github.com/Prashantrajput11/stocks-app"
+            >Github<i class="icons fab fa-github"></i
+          ></a>
+        </li>
+      </ul>
+    </footer>
+      </div>
     </div>
   );
 };
