@@ -4,11 +4,15 @@ import tourDB from "./tours.js";
 import "./style.css";
 
 const App = function () {
-  var countries = Object.keys(tourDB);
+
+  // Get list of arrays from tourDb object
+  let countries = Object.keys(tourDB);
+
+
   const [selectedCountry, setSelectedCountry] = useState("India");
-  function tourClickHandler(country) {
-    setSelectedCountry(country);
-  }
+
+  let tourClickHandler = country => setSelectedCountry(country);
+  
 
   return (
     <div className="main">
@@ -21,19 +25,21 @@ const App = function () {
           Checkout My Favourite Tours. Select One To Begin Your World Journey
         </h2>
       </div>
+
+      {/* display list of countries */}
       <div className="showCountries">
-        {countries.map(function (country) {
-          return (
-            <button className="btns" onClick={() => tourClickHandler(country)}>
-              {country}
-            </button>
-          );
-        })}
+      {
+          countries.map( country => <button className="btns" onClick={() => tourClickHandler(country)}>{country}</button>)
+      }
       </div>
+
+
+
+
       <hr />
       <div className="showCity">
         <ul className="navitem">
-          {tourDB[selectedCountry].map(function (city) {
+          {tourDB[selectedCountry].map(city => {
             return (
               <li className="item" key={city.name}>
                 <div>City : {city.name}</div>
